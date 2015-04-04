@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>0AF0DD04-B99F-4DC6-B8DA-83DA04E82218</string>
+	<string>1569F84F-DFB7-4782-8219-3953028DAD67</string>
 	<key>IDESourceControlProjectName</key>
 	<string>calagram</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/tedgueniche/calagram.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iOS/calagram/calagram.xcodeproj</string>
+	<string>calagram/calagram.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>73955F058467ED2FF377F2D3D84F962B9FB4745A</key>
-		<string>../../../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/tedgueniche/calagram.git</string>

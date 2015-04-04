@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "19AB808E1ACF751F0079079F"
+               BlueprintIdentifier = "195C1A6D1ACF8693008D60C3"
                BuildableName = "calagram.app"
                BlueprintName = "calagram"
                ReferencedContainer = "container:calagram.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "19AB80A71ACF751F0079079F"
+               BlueprintIdentifier = "195C1A821ACF8693008D60C3"
                BuildableName = "calagramTests.xctest"
                BlueprintName = "calagramTests"
                ReferencedContainer = "container:calagram.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "19AB80A71ACF751F0079079F"
+               BlueprintIdentifier = "195C1A821ACF8693008D60C3"
                BuildableName = "calagramTests.xctest"
                BlueprintName = "calagramTests"
                ReferencedContainer = "container:calagram.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "19AB808E1ACF751F0079079F"
+            BlueprintIdentifier = "195C1A6D1ACF8693008D60C3"
             BuildableName = "calagram.app"
             BlueprintName = "calagram"
             ReferencedContainer = "container:calagram.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "19AB808E1ACF751F0079079F"
+            BlueprintIdentifier = "195C1A6D1ACF8693008D60C3"
             BuildableName = "calagram.app"
             BlueprintName = "calagram"
             ReferencedContainer = "container:calagram.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "19AB808E1ACF751F0079079F"
+            BlueprintIdentifier = "195C1A6D1ACF8693008D60C3"
             BuildableName = "calagram.app"
             BlueprintName = "calagram"
             ReferencedContainer = "container:calagram.xcodeproj">
