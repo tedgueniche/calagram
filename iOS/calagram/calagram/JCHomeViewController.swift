@@ -20,6 +20,10 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //Remove the tableView insets
+        self.homeFeedTableView.separatorInset = UIEdgeInsetsZero
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +43,7 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         //Define the number of rows in the tableView
-        return 5
+        return 15
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -77,12 +81,107 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
         var cellSubtitleContainerView : UIView? = self.view.viewWithTag(27)
         var cellSubtitleImageView : UIImageView? = self.view.viewWithTag(28) as? UIImageView
         var cellSubtitleLabel : UILabel? = self.view.viewWithTag(29) as? UILabel
+        var cellFooterBorderView : UIView? = self.view.viewWithTag(30)
         
+        //Style the cell title view
+        cellTitleView?.backgroundColor = UIColor.whiteColor()
         
-    
+        //Round the image and add border                    //Need to update for different screen sizes
+        cellTitleImageView?.layer.cornerRadius = 29.5
+        cellTitleImageView?.layer.borderWidth = 1
+        cellTitleImageView?.layer.borderColor = UIColor.blackColor().CGColor
+        cellTitleImageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        cellTitleImageView?.clipsToBounds = true
         
+        //Style the subtitle view
+        cellSubtitleContainerView?.backgroundColor = UIColor(red: 0.651, green: 0.667, blue: 0.663, alpha: 1.00)
+        cellSubtitleLabel?.textColor = UIColor.whiteColor()
+        cellSubtitleImageView?.tintColor = UIColor.whiteColor()
+        cellSubtitleImageView?.image = UIImage(named: "play")
+        cellSubtitleImageView?.backgroundColor = UIColor.clearColor()
+        
+        //Style the background image
+        cellBackgroundImageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        cellBackgroundImageView?.clipsToBounds = true
+        
+        //Create the circle border                      //Need to update for different
+        cellCircleBorderView?.layer.cornerRadius = 92.5
+        cellCircleBorderView?.layer.borderWidth = 3
+        cellCircleBorderView?.layer.borderColor = UIColor(red: 0.984, green: 0.878, blue: 0.878, alpha: 1.00).CGColor
+        cellCircleBorderView?.clipsToBounds = true
+        cellCircleBorderView?.backgroundColor = UIColor.clearColor()
+        
+        //Create the semi transparent circle            //Need to update for different
+        cellCircleTransparentView?.layer.cornerRadius = 87.5
+        cellCircleTransparentView?.clipsToBounds = true
+        
+        //Create the circle center view                 //Need to update for different
+        cellCircleCenterView?.layer.cornerRadius = 87.5
+        cellCircleCenterView?.backgroundColor = UIColor.clearColor()
+        
+        //Style the social Icon
+        cellAttendingImageView?.image = UIImage(named: "social")
+        cellAttendingImageView?.backgroundColor = UIColor.clearColor()
+        
+        //Style the following icon
+        cellFollowingImageView?.image = UIImage(named: "rss")
+        cellFollowingImageView?.backgroundColor = UIColor.clearColor()
+        
+        //Style the location container view
+        cellLocationContainerView?.backgroundColor = UIColor.whiteColor()
+        cellLocationImageView?.image = UIImage(named: "map-marker")
+        cellLocationImageView?.backgroundColor = UIColor.whiteColor()
+        
+        //Style the footer view
+        cellFooterView?.backgroundColor = UIColor(red: 0.898, green: 0.902, blue: 0.910, alpha: 1.00)
+        
+        cellInfoButtonImageView?.backgroundColor = UIColor.whiteColor()
+        cellInfoButtonImageView?.image = UIImage(named: "info")
+        cellInfoButtonImageView?.layer.cornerRadius = 5
+        cellInfoButtonImageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        cellInfoButtonImageView?.tintColor = UIColor.blackColor()
+        
+        cellCommentsButtonImageView?.backgroundColor = UIColor.whiteColor()
+        cellCommentsButtonImageView?.image = UIImage(named: "comment-1")
+        cellCommentsButtonImageView?.layer.cornerRadius = 5
+        cellCommentsButtonImageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        cellCommentsButtonImageView?.tintColor = UIColor.blackColor()
+        
+        cellCameraButtonImageView?.backgroundColor = UIColor.whiteColor()
+        cellCameraButtonImageView?.image = UIImage(named: "camera")
+        cellCameraButtonImageView?.layer.cornerRadius = 5
+        cellCameraButtonImageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        cellCameraButtonImageView?.tintColor = UIColor.blackColor()
+        
+        cellCalendarButtonImageView?.backgroundColor = UIColor.whiteColor()
+        cellCalendarButtonImageView?.image = UIImage(named: "calender")
+        cellCalendarButtonImageView?.layer.cornerRadius = 5
+        cellCalendarButtonImageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        cellCalendarButtonImageView?.tintColor = UIColor.blackColor()
+        
+        cellStatusImageView?.backgroundColor = UIColor.clearColor()
+        cellStatusImageView?.image = UIImage(named: "status-green")
+        cellStatusImageView?.layer.cornerRadius = 5
+        cellStatusImageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        cellStatusImageView?.tintColor = UIColor.blackColor()
+        
+        //Style the cell container view
         cellContainerView?.backgroundColor = UIColor.whiteColor()
-        //cell.textLabel?.text = self.items[indexPath.row]
+        
+        
+        
+        
+        
+        
+        
+        //Remove the cell inset margin
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsetsZero
+        cell.preservesSuperviewLayoutMargins = false
+        
+        //Set the selection style
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
         
         return cell
     }

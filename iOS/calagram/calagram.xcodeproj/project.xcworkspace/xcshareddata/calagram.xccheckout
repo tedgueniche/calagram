@@ -14,11 +14,11 @@
 		<string>https://github.com/tedgueniche/calagram.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>calagram/calagram.xcodeproj</string>
+	<string>iOS/calagram/calagram.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>73955F058467ED2FF377F2D3D84F962B9FB4745A</key>
-		<string>../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/tedgueniche/calagram.git</string>
