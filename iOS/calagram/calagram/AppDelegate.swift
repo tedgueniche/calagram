@@ -8,6 +8,9 @@
 
 import UIKit
 
+import Parse
+import Bolts
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -23,6 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().barTintColor = UIColor.blackColor()
         UITabBar.appearance().tintColor = UIColor.whiteColor()
         
+        //Setup Parse
+        Parse.enableLocalDatastore()
+        Parse.setApplicationId("ys5UyXPlnROWsyYpj0CVJrHU91ec0rUCI0nqOOgN", clientKey: "9zre2HNNrM9XdESzQkv6sdMVcywG6cSavOCCRwf3")
+        //[Optional] Track statistics around application opens.
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         return true
     }

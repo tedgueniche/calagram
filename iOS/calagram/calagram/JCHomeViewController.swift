@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Parse
+
 class JCHomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     //Outlets
@@ -23,6 +25,20 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
         
         //Remove the tableView insets
         self.homeFeedTableView.separatorInset = UIEdgeInsetsZero
+        
+        //Test Parse Setup
+        //Update a Parse object
+        var query = PFQuery(className: "EventStream")
+        
+        query.getObjectInBackgroundWithId("OqMsht4DqO", block: { (object: PFObject?, error: NSError? ) -> Void in
+            
+            if error != nil {
+                println(error)
+                
+            } else if let product = object {
+                println(product["attendingCount"]!)
+            }
+        })
 
     }
 
@@ -49,7 +65,7 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //Get the reusable cell
-        var cell:UITableViewCell = self.homeFeedTableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+        var cell:UITableViewCell = self.homeFeedTableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
         
         //Get all cell objects
         var cellContainerView : UIView? = self.view.viewWithTag(1)
@@ -167,12 +183,6 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
         
         //Style the cell container view
         cellContainerView?.backgroundColor = UIColor.whiteColor()
-        
-        
-        
-        
-        
-        
         
         //Remove the cell inset margin
         cell.separatorInset = UIEdgeInsetsZero
