@@ -74,39 +74,39 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //Get the reusable cell
-        var cell:UITableViewCell = self.homeFeedTableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+        let cell = self.homeFeedTableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
         
         //Get all cell objects
-        var cellContainerView : UIView? = self.view.viewWithTag(1)
-        var cellTitleView : UIView? = self.view.viewWithTag(2)
-        var cellTitleImageView : UIImageView? = self.view.viewWithTag(3) as? UIImageView
-        var cellTitleLabel : UILabel? = self.view.viewWithTag(4) as? UILabel
-        var cellBackgroundImageView : UIImageView? = self.view.viewWithTag(5) as? UIImageView
-        var cellCircleBorderView : UIView? = self.view.viewWithTag(6)
-        var cellCircleTransparentView : UIView? = self.view.viewWithTag(7)
-        var cellCircleCenterView : UIView? = self.view.viewWithTag(8)
-        var cellAttendingImageView : UIImageView? = self.view.viewWithTag(9) as? UIImageView
-        var cellFollowingImageView : UIImageView? = self.view.viewWithTag(10) as? UIImageView
-        var cellCircleMiddleBorderView : UIView? = self.view.viewWithTag(11)
-        var cellAttendingNumberLabel : UILabel? = self.view.viewWithTag(12) as? UILabel
-        var cellAttendingLabel : UILabel? = self.view.viewWithTag(13) as? UILabel
-        var cellFollowingNumberLabel : UILabel? = self.view.viewWithTag(14) as? UILabel
-        var cellFollowingLabel : UILabel? = self.view.viewWithTag(15) as? UILabel
-        var cellLocationContainerView : UIView? = self.view.viewWithTag(16)
-        var cellLocationImageView : UIImageView? = self.view.viewWithTag(17) as? UIImageView
-        var cellLocationLabel : UILabel? = self.view.viewWithTag(18) as? UILabel
-        var cellTimeLabel : UILabel? = self.view.viewWithTag(19) as? UILabel
-        var cellFooterView : UIView? = self.view.viewWithTag(20)
-        var cellInfoButtonImageView : UIImageView? = self.view.viewWithTag(21) as? UIImageView
-        var cellCommentsButtonImageView : UIImageView? = self.view.viewWithTag(22) as? UIImageView
-        var cellCameraButtonImageView : UIImageView? = self.view.viewWithTag(23) as? UIImageView
-        var cellCalendarButtonImageView : UIImageView? = self.view.viewWithTag(24) as? UIImageView
-        var cellStatusLabel : UILabel? = self.view.viewWithTag(25) as? UILabel
-        var cellStatusImageView : UIImageView? = self.view.viewWithTag(26) as? UIImageView
-        var cellSubtitleContainerView : UIView? = self.view.viewWithTag(27)
-        var cellSubtitleImageView : UIImageView? = self.view.viewWithTag(28) as? UIImageView
-        var cellSubtitleLabel : UILabel? = self.view.viewWithTag(29) as? UILabel
-        var cellFooterBorderView : UIView? = self.view.viewWithTag(30)
+        var cellContainerView : UIView? = cell.contentView.viewWithTag(1)
+        var cellTitleView : UIView? = cell.contentView.viewWithTag(2)
+        var cellTitleImageView : UIImageView? = cell.contentView.viewWithTag(3) as? UIImageView
+        var cellTitleLabel : UILabel? = cell.contentView.viewWithTag(4) as? UILabel
+        var cellBackgroundImageView : UIImageView? = cell.contentView.viewWithTag(5) as? UIImageView
+        var cellCircleBorderView : UIView? = cell.contentView.viewWithTag(6)
+        var cellCircleTransparentView : UIView? = cell.contentView.viewWithTag(7)
+        var cellCircleCenterView : UIView? = cell.contentView.viewWithTag(8)
+        var cellAttendingImageView : UIImageView? = cell.contentView.viewWithTag(9) as? UIImageView
+        var cellFollowingImageView : UIImageView? = cell.contentView.viewWithTag(10) as? UIImageView
+        var cellCircleMiddleBorderView : UIView? = cell.contentView.viewWithTag(11)
+        var cellAttendingNumberLabel : UILabel? = cell.contentView.viewWithTag(12) as? UILabel
+        var cellAttendingLabel : UILabel? = cell.contentView.viewWithTag(13) as? UILabel
+        var cellFollowingNumberLabel : UILabel? = cell.contentView.viewWithTag(14) as? UILabel
+        var cellFollowingLabel : UILabel? = cell.contentView.viewWithTag(15) as? UILabel
+        var cellLocationContainerView : UIView? = cell.contentView.viewWithTag(16)
+        var cellLocationImageView : UIImageView? = cell.contentView.viewWithTag(17) as? UIImageView
+        var cellLocationLabel : UILabel? = cell.contentView.viewWithTag(18) as? UILabel
+        var cellTimeLabel : UILabel? = cell.contentView.viewWithTag(19) as? UILabel
+        var cellFooterView : UIView? = cell.contentView.viewWithTag(20)
+        var cellInfoButtonImageView : UIImageView? = cell.contentView.viewWithTag(21) as? UIImageView
+        var cellCommentsButtonImageView : UIImageView? = cell.contentView.viewWithTag(22) as? UIImageView
+        var cellCameraButtonImageView : UIImageView? = cell.contentView.viewWithTag(23) as? UIImageView
+        var cellCalendarButtonImageView : UIImageView? = cell.contentView.viewWithTag(24) as? UIImageView
+        var cellStatusLabel : UILabel? = cell.contentView.viewWithTag(25) as? UILabel
+        var cellStatusImageView : UIImageView? = cell.contentView.viewWithTag(26) as? UIImageView
+        var cellSubtitleContainerView : UIView? = cell.contentView.viewWithTag(27)
+        var cellSubtitleImageView : UIImageView? = cell.contentView.viewWithTag(28) as? UIImageView
+        var cellSubtitleLabel : UILabel? = cell.contentView.viewWithTag(29) as? UILabel
+        var cellFooterBorderView : UIView? = cell.contentView.viewWithTag(30)
         
         //Style the cell title view
         cellTitleView?.backgroundColor = UIColor.whiteColor()

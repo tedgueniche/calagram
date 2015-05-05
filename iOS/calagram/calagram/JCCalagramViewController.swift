@@ -69,11 +69,11 @@ class JCCalagramViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var currentCell = streamTableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let currentCell = streamTableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         
-        var dateLabel = self.view.viewWithTag(1) as! UILabel
-        var descriptionLabel = self.view.viewWithTag(2) as! UILabel
-        var locationAndTimeLabel = self.view.viewWithTag(3) as! UILabel
+        var dateLabel = currentCell.contentView.viewWithTag(1) as! UILabel
+        var descriptionLabel = currentCell.contentView.viewWithTag(2) as! UILabel
+        var locationAndTimeLabel = currentCell.contentView.viewWithTag(3) as! UILabel
         
         dateLabel.text = "12/05"
         descriptionLabel.text = "Millard North at Millard North"
