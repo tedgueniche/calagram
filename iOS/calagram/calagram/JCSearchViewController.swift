@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import Parse
 
-class JCSearchViewController: UIViewController {
+class JCSearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBOutlet weak var searchContainerView: UIView!
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchCollectionView: UICollectionView!
+    @IBOutlet weak var searchTypeSegmentedControls: UISegmentedControl!
+    @IBOutlet weak var searchTypeContainerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,15 +37,29 @@ class JCSearchViewController: UIViewController {
         self.parentViewController?.navigationItem.leftBarButtonItem!.title = ""
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //IBActions
+    @IBAction func searchTypeSegmentedControlValueChanged(sender: AnyObject) {
     }
-    */
+    
+    //CollectionViewDataSource
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1;
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        var currentCell = searchCollectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! UICollectionViewCell
+        
+        return currentCell;
+    }
+    
+    //CollectionViewDelegate
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        println("Selected item no \(indexPath.row)")
+    }
 
 }

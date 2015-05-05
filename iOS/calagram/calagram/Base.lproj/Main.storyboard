@@ -270,33 +270,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tuV-bb-XKC">
-                                <rect key="frame" x="0.0" y="474" width="320" height="45"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7g5-zr-PMU">
-                                        <rect key="frame" x="50" y="9" width="220" height="29"/>
-                                        <segments>
-                                            <segment title="PAST"/>
-                                            <segment title="THIS WEEK"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_male@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="SYr-Dd-HKv">
-                                        <rect key="frame" x="8" y="6" width="34" height="34"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="location@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="PSO-aD-1qH">
-                                        <rect key="frame" x="278" y="6" width="34" height="34"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iy1-Hc-OLh">
                                 <rect key="frame" x="0.0" y="64" width="320" height="45"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1xg-iI-lEi">
-                                        <rect key="frame" x="8" y="8" width="304" height="30"/>
+                                        <rect key="frame" x="8" y="8" width="260" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="search"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7B8-x1-4mY">
+                                        <rect key="frame" x="276" y="8" width="38" height="30"/>
+                                        <state key="normal" title="Temp">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="NhX-RM-s3M" kind="show" id="8sA-sQ-bX4"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -309,7 +299,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ojQ-sX-mmP">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="ojQ-sX-mmP">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -319,7 +309,33 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="gsc-lS-AyK" id="8uV-Ya-Sgx"/>
+                                    <outlet property="delegate" destination="gsc-lS-AyK" id="7Kc-R6-Rud"/>
+                                </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tuV-bb-XKC">
+                                <rect key="frame" x="0.0" y="474" width="320" height="45"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7g5-zr-PMU">
+                                        <rect key="frame" x="50" y="9" width="220" height="29"/>
+                                        <segments>
+                                            <segment title="FRIENDS"/>
+                                            <segment title="STREAMS"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="searchTypeSegmentedControlValueChanged:" destination="gsc-lS-AyK" eventType="valueChanged" id="MqP-Qd-4Jf"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_male@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="SYr-Dd-HKv">
+                                        <rect key="frame" x="8" y="6" width="34" height="34"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="location@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="PSO-aD-1qH">
+                                        <rect key="frame" x="278" y="6" width="34" height="34"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -327,6 +343,11 @@
                     <navigationItem key="navigationItem" title="Search" id="hNy-XA-XLW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="searchCollectionView" destination="yoa-vR-cnz" id="kZI-En-g9q"/>
+                        <outlet property="searchContainerView" destination="Iy1-Hc-OLh" id="zTS-DX-A9f"/>
+                        <outlet property="searchTextField" destination="1xg-iI-lEi" id="SBL-Xd-35O"/>
+                        <outlet property="searchTypeContainerView" destination="tuV-bb-XKC" id="paq-xq-X2A"/>
+                        <outlet property="searchTypeSegmentedControls" destination="7g5-zr-PMU" id="9pO-7y-J6E"/>
                         <segue destination="NhX-RM-s3M" kind="show" identifier="SearchToBusinessProfileSegue" id="33n-0E-xWT"/>
                     </connections>
                 </viewController>
@@ -395,6 +416,10 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ey0-Dk-Q5x">
+                                        <rect key="frame" x="8" y="8" width="95" height="95"/>
+                                        <color key="backgroundColor" red="0.20350494089999999" green="0.80377998740000001" blue="0.005819805099" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -430,6 +455,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NhX-RM-s3M" id="yYr-BL-5Zn"/>
+                                    <outlet property="delegate" destination="NhX-RM-s3M" id="z8e-Is-1pr"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -437,6 +466,18 @@
                     <navigationItem key="navigationItem" title="Business Profile" id="Wd6-SW-C1u"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="followButton" destination="bmT-Ab-ehT" id="a5o-OF-9Fd"/>
+                        <outlet property="friendsLabel" destination="ENI-lm-mx8" id="qT7-y4-i9I"/>
+                        <outlet property="nameDescriptionLabel" destination="oJK-7D-yTw" id="de1-3p-R2B"/>
+                        <outlet property="nameLabel" destination="Dcl-Xs-6jY" id="eOS-L0-bkF"/>
+                        <outlet property="numberOfFriendsLabel" destination="hsB-at-fdV" id="cFk-qA-Arv"/>
+                        <outlet property="numberOfStreamsLabel" destination="RfF-lF-ERB" id="dd6-g8-Vc8"/>
+                        <outlet property="profileImageView" destination="ey0-Dk-Q5x" id="20j-o9-NGz"/>
+                        <outlet property="streamTableView" destination="0eC-bI-wCN" id="7Vd-Pj-gxT"/>
+                        <outlet property="streamsLabel" destination="IOF-8e-rR3" id="c9R-AD-Ova"/>
+                        <outlet property="topContainerView" destination="IvZ-5g-mvm" id="qov-30-4Ji"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRV-GD-N95" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -464,6 +505,9 @@
                                             <segment title="THIS WEEK"/>
                                             <segment title="UPCOMING"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="viewDisplayStateSegmentedControlValueChanged:" destination="Q3J-5k-EzR" eventType="valueChanged" id="HS2-Jo-hxw"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -546,6 +590,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Q3J-5k-EzR" id="Kvr-r7-aD3"/>
+                                    <outlet property="delegate" destination="Q3J-5k-EzR" id="oWK-wR-q3e"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -553,6 +601,18 @@
                     <tabBarItem key="tabBarItem" title="Caligram" image="copyright.png" id="oz2-ZW-axa"/>
                     <navigationItem key="navigationItem" title="Caligram" id="f2e-mq-MzJ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="friandsLabel" destination="4yf-y5-Mg2" id="Sfr-Ka-Bml"/>
+                        <outlet property="nameLabel" destination="nL0-yj-xo4" id="L8t-lO-WUa"/>
+                        <outlet property="numberOfFriendsLabel" destination="V00-0h-BSK" id="5hA-WQ-ZoE"/>
+                        <outlet property="numberOfStreamLabel" destination="WR7-qT-DIN" id="ev6-1j-wi4"/>
+                        <outlet property="profileImageView" destination="GDe-Bm-1to" id="yzp-tn-I1O"/>
+                        <outlet property="stateLabel" destination="Hen-b2-bIe" id="zS1-OI-IPF"/>
+                        <outlet property="streamTableView" destination="Hxc-qu-o8K" id="eAO-6Z-wl5"/>
+                        <outlet property="streamsLabel" destination="0XY-YP-vQN" id="6IA-Uy-EoZ"/>
+                        <outlet property="topContainerView" destination="Xd4-TN-XDi" id="kEL-u7-v8V"/>
+                        <outlet property="viewDisplayStateSegmentedControl" destination="pQw-UT-MaD" id="nZe-BN-gyO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0DP-Ty-TP9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -592,4 +652,7 @@
         <image name="location@3x.png" width="50" height="50"/>
         <image name="user_male@3x.png" width="50" height="50"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8sA-sQ-bX4"/>
+    </inferredMetricsTieBreakers>
 </document>
