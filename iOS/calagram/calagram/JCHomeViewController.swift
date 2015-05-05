@@ -12,6 +12,7 @@ import Parse
 
 class JCHomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var myNavigationItem: UINavigationItem!
     //Outlets
     @IBOutlet weak var homeFeedTableView: UITableView!
     
@@ -39,7 +40,16 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
                 println(product["attendingCount"]!)
             }
         })
-
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //Setup the view Title
+        self.parentViewController?.navigationItem.title = "Home"
+        self.parentViewController?.navigationItem.leftBarButtonItem = UIBarButtonItem()
+        self.parentViewController?.navigationItem.leftBarButtonItem!.title = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -145,7 +155,7 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
         
         //Style the location container view
         cellLocationContainerView?.backgroundColor = UIColor.whiteColor()
-        cellLocationImageView?.image = UIImage(named: "map-marker")
+        cellLocationImageView?.image = UIImage(named: "location")
         cellLocationImageView?.backgroundColor = UIColor.whiteColor()
         
         //Style the footer view
@@ -158,7 +168,7 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
         cellInfoButtonImageView?.tintColor = UIColor.blackColor()
         
         cellCommentsButtonImageView?.backgroundColor = UIColor.whiteColor()
-        cellCommentsButtonImageView?.image = UIImage(named: "comment-1")
+        cellCommentsButtonImageView?.image = UIImage(named: "chat_filled")
         cellCommentsButtonImageView?.layer.cornerRadius = 5
         cellCommentsButtonImageView?.contentMode = UIViewContentMode.ScaleAspectFit
         cellCommentsButtonImageView?.tintColor = UIColor.blackColor()
@@ -170,7 +180,10 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
         cellCameraButtonImageView?.tintColor = UIColor.blackColor()
         
         cellCalendarButtonImageView?.backgroundColor = UIColor.whiteColor()
-        cellCalendarButtonImageView?.image = UIImage(named: "calender")
+        var myImage = UIImage(named: "calendar")!
+        let myInsets : UIEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5)
+        myImage = myImage.resizableImageWithCapInsets(myInsets)
+        cellCalendarButtonImageView?.image = myImage
         cellCalendarButtonImageView?.layer.cornerRadius = 5
         cellCalendarButtonImageView?.contentMode = UIViewContentMode.ScaleAspectFit
         cellCalendarButtonImageView?.tintColor = UIColor.blackColor()
@@ -191,7 +204,6 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
         
         //Set the selection style
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        
         
         return cell
     }
