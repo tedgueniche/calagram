@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 
 class JCCalagramViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
