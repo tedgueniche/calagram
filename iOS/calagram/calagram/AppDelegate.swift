@@ -30,8 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("ys5UyXPlnROWsyYpj0CVJrHU91ec0rUCI0nqOOgN", clientKey: "9zre2HNNrM9XdESzQkv6sdMVcywG6cSavOCCRwf3")
         //[Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+    
+        //Setup Facebook
+        FBLoginView.self
+        FBProfilePictureView.self
         
         return true
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        var wasHandled:Bool = FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
+        return wasHandled
     }
 
     func applicationWillResignActive(application: UIApplication) {
