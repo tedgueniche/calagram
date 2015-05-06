@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class JCHomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -27,17 +28,17 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
         
         //Test Parse Setup
         //Update a Parse object
-//        var query = PFQuery(className: "EventStream")
-//        
-//        query.getObjectInBackgroundWithId("OqMsht4DqO", block: { (object: PFObject?, error: NSError? ) -> Void in
-//            
-//            if error != nil {
-//                println(error)
-//                
-//            } else if let product = object {
-//                println(product["attendingCount"]!)
-//            }
-//        })
+        var query = PFQuery(className: "EventStream")
+        
+        query.getObjectInBackgroundWithId("OqMsht4DqO", block: { (object: PFObject?, error: NSError? ) -> Void in
+            
+            if error != nil {
+                println(error)
+                
+            } else if let product = object {
+                println(product["attendingCount"]!)
+            }
+        })
         
     }
     
