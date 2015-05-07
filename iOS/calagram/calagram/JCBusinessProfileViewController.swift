@@ -22,6 +22,8 @@ class JCBusinessProfileViewController: UIViewController, UITableViewDelegate, UI
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var streamTableView: UITableView!
     
+    var currentOrganisation : PFObject!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,8 +39,27 @@ class JCBusinessProfileViewController: UIViewController, UITableViewDelegate, UI
         profileImageView?.clipsToBounds = true
         profileImageView?.backgroundColor = UIColor.clearColor()
         
+        //Style the button
+        followButton?.layer.borderColor = UIColor(red: 0.000, green: 0.255, blue: 0.537, alpha: 1.00).CGColor
+        followButton.layer.cornerRadius = 8
+        followButton.layer.borderWidth = 2.0
+        followButton.tintColor = UIColor(red: 0.000, green: 0.255, blue: 0.537, alpha: 1.00)
+        
         //Style the background color
         topContainerView.backgroundColor = UIColor.whiteColor()
+        
+        //Set the Data
+        nameLabel?.text = currentOrganisation["name"] as? String
+        nameDescriptionLabel.text = currentOrganisation["location"] as? String
+        
+        //Hard Coded Data
+        if currentOrganisation.objectId == "Cik3DgBHZb" {
+            profileImageView.image = UIImage(named: "cre.png")
+        } else {
+            profileImageView.image = UIImage(named: "neb.png")
+        }
+        
+        //print(currentOrganisation!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +83,7 @@ class JCBusinessProfileViewController: UIViewController, UITableViewDelegate, UI
         var descriptionLabel = currentCell.contentView.viewWithTag(2) as! UILabel
         var locationAndTimeLabel = currentCell.contentView.viewWithTag(3) as! UILabel
         
+        //Hard Coded Data
         dateLabel.text = "12/05"
         descriptionLabel.text = "Millard North at Millard North"
         locationAndTimeLabel.text = "Millard Field - Omaha, NE - 7:30pm CST"

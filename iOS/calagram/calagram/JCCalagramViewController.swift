@@ -37,6 +37,11 @@ class JCCalagramViewController: UIViewController, UITableViewDelegate, UITableVi
         profileImageView?.clipsToBounds = true
         profileImageView?.backgroundColor = UIColor.clearColor()
         
+        //Hard Coded Data
+        nameLabel.text = "Jeff Nieto"
+        stateLabel.text = "Omaha, NE"
+        profileImageView.image = UIImage(named: "profilePlaceholder.jpg")
+        
         //Style the background color
         topContainerView.backgroundColor = UIColor.whiteColor()
     }
@@ -75,6 +80,7 @@ class JCCalagramViewController: UIViewController, UITableViewDelegate, UITableVi
         var descriptionLabel = currentCell.contentView.viewWithTag(2) as! UILabel
         var locationAndTimeLabel = currentCell.contentView.viewWithTag(3) as! UILabel
         
+        //Hard coded Data
         dateLabel.text = "12/05"
         descriptionLabel.text = "Millard North at Millard North"
         locationAndTimeLabel.text = "Millard Field - Omaha, NE - 7:30pm CST"

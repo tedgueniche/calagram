@@ -35,23 +35,25 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
 
     //FacebookLoginViewDelegate
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
-        tempImageView.hidden = false
+//        tempImageView.hidden = false
     }
     
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
         
-        println(user)
-       
+        //println(user)
+        
+        self.performSegueWithIdentifier("LoginToHomeSegue", sender: "self")
+        
         //Get Profile Image
-        let userImageURL = "https://graph.facebook.com/\(user.objectID)/picture?type=large"
-        let url = NSURL(string: userImageURL)
-        let imageData = NSData(contentsOfURL: url!)
-        let image = UIImage(data: imageData!)
-        tempImageView.image = image
+//        let userImageURL = "https://graph.facebook.com/\(user.objectID)/picture?type=large"
+//        let url = NSURL(string: userImageURL)
+//        let imageData = NSData(contentsOfURL: url!)
+//        let image = UIImage(data: imageData!)
+//        tempImageView.image = image
     }
     
     func loginViewShowingLoggedOutUser(loginView: FBLoginView!) {
-        tempImageView.hidden = true
+//        tempImageView.hidden = true
     }
     
     func loginView(loginView: FBLoginView!, handleError error: NSError!) {

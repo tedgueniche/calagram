@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		191013141AFAD81600AFD04E /* footBallField.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 191013131AFAD81600AFD04E /* footBallField.jpg */; };
+		191013161AFAD95600AFD04E /* volleyBallCourt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 191013151AFAD95600AFD04E /* volleyBallCourt1.png */; };
+		191013191AFADB3100AFD04E /* cre.png in Resources */ = {isa = PBXBuildFile; fileRef = 191013171AFADB3100AFD04E /* cre.png */; };
+		1910131A1AFADB3100AFD04E /* neb.png in Resources */ = {isa = PBXBuildFile; fileRef = 191013181AFADB3100AFD04E /* neb.png */; };
+		1910131C1AFAFC1A00AFD04E /* profilePlaceholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1910131B1AFAFC1A00AFD04E /* profilePlaceholder.jpg */; };
 		19192E271ACFA459004065E7 /* status-gray@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19192E1E1ACFA459004065E7 /* status-gray@1x.png */; };
 		19192E281ACFA459004065E7 /* status-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19192E1F1ACFA459004065E7 /* status-gray@2x.png */; };
 		19192E291ACFA459004065E7 /* status-gray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19192E201ACFA459004065E7 /* status-gray@3x.png */; };
@@ -112,6 +117,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		191013131AFAD81600AFD04E /* footBallField.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = footBallField.jpg; sourceTree = "<group>"; };
+		191013151AFAD95600AFD04E /* volleyBallCourt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volleyBallCourt1.png; sourceTree = "<group>"; };
+		191013171AFADB3100AFD04E /* cre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cre.png; sourceTree = "<group>"; };
+		191013181AFADB3100AFD04E /* neb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neb.png; sourceTree = "<group>"; };
+		1910131B1AFAFC1A00AFD04E /* profilePlaceholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profilePlaceholder.jpg; sourceTree = "<group>"; };
 		19192E1E1ACFA459004065E7 /* status-gray@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-gray@1x.png"; sourceTree = "<group>"; };
 		19192E1F1ACFA459004065E7 /* status-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-gray@2x.png"; sourceTree = "<group>"; };
 		19192E201ACFA459004065E7 /* status-gray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-gray@3x.png"; sourceTree = "<group>"; };
@@ -248,6 +258,7 @@
 		19192E1D1ACFA41E004065E7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1910131B1AFAFC1A00AFD04E /* profilePlaceholder.jpg */,
 				19192E1E1ACFA459004065E7 /* status-gray@1x.png */,
 				19192E1F1ACFA459004065E7 /* status-gray@2x.png */,
 				19192E201ACFA459004065E7 /* status-gray@3x.png */,
@@ -352,6 +363,7 @@
 		195C1A711ACF8693008D60C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				19A9D3851AFAD5CF0069DB8C /* tempImages */,
 				19ED7DA11AF8476F006D7C18 /* AllIcons */,
 				19192E301ACFAA4D004065E7 /* Icons2 */,
 				19192E1D1ACFA41E004065E7 /* Images */,
@@ -368,6 +380,17 @@
 				195C1A891ACF8693008D60C3 /* calagramTests.swift */,
 			);
 			path = calagramTests;
+			sourceTree = "<group>";
+		};
+		19A9D3851AFAD5CF0069DB8C /* tempImages */ = {
+			isa = PBXGroup;
+			children = (
+				191013131AFAD81600AFD04E /* footBallField.jpg */,
+				191013151AFAD95600AFD04E /* volleyBallCourt1.png */,
+				191013171AFADB3100AFD04E /* cre.png */,
+				191013181AFADB3100AFD04E /* neb.png */,
+			);
+			name = tempImages;
 			sourceTree = "<group>";
 		};
 		19ED7DA11AF8476F006D7C18 /* AllIcons */ = {
@@ -527,7 +550,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				19192E651ACFAA5D004065E7 /* play@2x.png in Resources */,
+				191013141AFAD81600AFD04E /* footBallField.jpg in Resources */,
 				19ED7DDD1AF8476F006D7C18 /* user_male@1x.png in Resources */,
+				1910131C1AFAFC1A00AFD04E /* profilePlaceholder.jpg in Resources */,
 				19192E2A1ACFA459004065E7 /* status-green@1x.png in Resources */,
 				19192E6A1ACFAA5D004065E7 /* social@1x.png in Resources */,
 				19ED7DE71AF8476F006D7C18 /* copyright@2x.png in Resources */,
@@ -537,11 +562,13 @@
 				19ED7DDA1AF8476F006D7C18 /* info@1x.png in Resources */,
 				19ED7DE31AF8476F006D7C18 /* camera@2x.png in Resources */,
 				19ED7DFE1AF8476F006D7C18 /* user_male_filled@3x.png in Resources */,
+				191013191AFADB3100AFD04E /* cre.png in Resources */,
 				19ED7DD51AF8476F006D7C18 /* chat@1x.png in Resources */,
 				19ED7DF11AF8476F006D7C18 /* calendar@3x.png in Resources */,
 				19ED7DF81AF8476F006D7C18 /* info@3x.png in Resources */,
 				19ED7DF71AF8476F006D7C18 /* home@3x.png in Resources */,
 				19192E281ACFA459004065E7 /* status-gray@2x.png in Resources */,
+				1910131A1AFADB3100AFD04E /* neb.png in Resources */,
 				19ED7DD41AF8476F006D7C18 /* camera@1x.png in Resources */,
 				19192E2E1ACFA459004065E7 /* status-yellow@2x.png in Resources */,
 				19ED7DE41AF8476F006D7C18 /* chat@2x.png in Resources */,
@@ -560,6 +587,7 @@
 				19192E2B1ACFA459004065E7 /* status-green@2x.png in Resources */,
 				19ED7DD21AF8476F006D7C18 /* back@1x.png in Resources */,
 				195C1A791ACF8693008D60C3 /* Main.storyboard in Resources */,
+				191013161AFAD95600AFD04E /* volleyBallCourt1.png in Resources */,
 				19ED7DE81AF8476F006D7C18 /* home@2x.png in Resources */,
 				19192E291ACFA459004065E7 /* status-gray@3x.png in Resources */,
 				19192E6C1ACFAA5D004065E7 /* social@3x.png in Resources */,

@@ -11,9 +11,12 @@ import Parse
 
 class JCHomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var myNavigationItem: UINavigationItem!
     //Outlets
+    @IBOutlet weak var myNavigationItem: UINavigationItem!
     @IBOutlet weak var homeFeedTableView: UITableView!
+    
+    //Data
+    var eventStreamArray : [PFObject] = []
     
     //--------------------------------------------------------------------------------------
     //ViewCycle
@@ -26,20 +29,19 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
         //Remove the tableView insets
         self.homeFeedTableView.separatorInset = UIEdgeInsetsZero
         
-        //Test Parse Setup
-        //Update a Parse object
-        var query = PFQuery(className: "EventStream")
-        
-        query.getObjectInBackgroundWithId("OqMsht4DqO", block: { (object: PFObject?, error: NSError? ) -> Void in
-            
-            if error != nil {
-                println(error)
-                
-            } else if let product = object {
-                println(product["attendingCount"]!)
+        //Get The Data from Parse
+        var query = PFQuery(className:"EventStream")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if let error = error {
+                // There was an error
+                self.showDataErrorAlert(error)
+            } else {
+                // objects has all the Posts the current user liked.
+                self.eventStreamArray = objects as! [PFObject]
+                self.updateView()
             }
-        })
-        
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -57,6 +59,18 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     //--------------------------------------------------------------------------------------
+    //Helper Methods
+    
+    func updateView() {
+        //println(self.eventStreamArray)
+        homeFeedTableView.reloadData()
+    }
+    
+    func showDataErrorAlert(error: NSError) {
+        println("Parse data error: \(error)")
+    }
+    
+    //--------------------------------------------------------------------------------------
     //TableView DataSource
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -68,7 +82,7 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         //Define the number of rows in the tableView
-        return 15
+        return eventStreamArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -115,7 +129,7 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
         cellTitleImageView?.layer.cornerRadius = 29.5
         cellTitleImageView?.layer.borderWidth = 1
         cellTitleImageView?.layer.borderColor = UIColor.blackColor().CGColor
-        cellTitleImageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        cellTitleImageView?.contentMode = UIViewContentMode.ScaleToFill
         cellTitleImageView?.clipsToBounds = true
         
         //Style the subtitle view
@@ -126,7 +140,7 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
         cellSubtitleImageView?.backgroundColor = UIColor.clearColor()
         
         //Style the background image
-        cellBackgroundImageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        cellBackgroundImageView?.contentMode = UIViewContentMode.ScaleToFill
         cellBackgroundImageView?.clipsToBounds = true
         
         //Create the circle border                      //Need to update for different
@@ -180,8 +194,6 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
         
         cellCalendarButtonImageView?.backgroundColor = UIColor.whiteColor()
         var myImage = UIImage(named: "calendar")!
-        let myInsets : UIEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5)
-        myImage = myImage.resizableImageWithCapInsets(myInsets)
         cellCalendarButtonImageView?.image = myImage
         cellCalendarButtonImageView?.layer.cornerRadius = 5
         cellCalendarButtonImageView?.contentMode = UIViewContentMode.ScaleAspectFit
@@ -195,6 +207,41 @@ class JCHomeViewController: UIViewController, UITableViewDataSource, UITableView
         
         //Style the cell container view
         cellContainerView?.backgroundColor = UIColor.whiteColor()
+        
+        //Setup the content
+        var currentEvent = eventStreamArray[indexPath.row] as PFObject
+        
+        cellSubtitleLabel?.text = currentEvent["announcement"] as? String
+        
+        var attendingNumber = currentEvent["attendingCount"] as! Int
+        cellAttendingNumberLabel?.text = "\(attendingNumber)"
+        
+        var startTime = currentEvent["start"] as? NSDate
+        var dateFormater = NSDateFormatter()
+        dateFormater.dateFormat = "dd/MM/yyyy - hh:mm"
+        cellTimeLabel?.text = dateFormater.stringFromDate(startTime!) as String
+        
+        var eventVenue = currentEvent["venue"] as? String
+        var eventLocation = currentEvent["location"] as? String
+        
+        cellLocationLabel?.text = "\(eventVenue!) - \(eventLocation!)"
+        
+        //Hard Coded Values
+        if indexPath.row % 2 == 1 {
+            cellBackgroundImageView?.image = UIImage(named: "footBallField.jpg")
+            cellTitleImageView?.image = UIImage(named: "neb.png")
+            cellFollowingNumberLabel?.text = "22198"
+            cellStatusLabel?.text = "Going"
+            cellStatusImageView?.image = UIImage(named: "status-green")
+            cellTitleLabel?.text = "University of Nebraska - Football"
+        } else {
+            cellBackgroundImageView?.image = UIImage(named: "volleyBallCourt1.png")
+            cellTitleImageView?.image = UIImage(named: "cre.png")
+            cellFollowingNumberLabel?.text = "14655"
+            cellStatusLabel?.text = "Not Going"
+            cellStatusImageView?.image = UIImage(named: "status-yellow")
+            cellTitleLabel?.text = "University of Nebraska - Volleyball"
+        }
         
         //Remove the cell inset margin
         cell.separatorInset = UIEdgeInsetsZero
