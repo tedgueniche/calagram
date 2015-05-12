@@ -50,11 +50,11 @@
 		194AE7391AF6E3ED0015276D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194AE7381AF6E3ED0015276D /* Social.framework */; };
 		195C1A741ACF8693008D60C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C1A731ACF8693008D60C3 /* AppDelegate.swift */; };
 		195C1A791ACF8693008D60C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 195C1A771ACF8693008D60C3 /* Main.storyboard */; };
-		195C1A7B1ACF8693008D60C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 195C1A7A1ACF8693008D60C3 /* Images.xcassets */; };
 		195C1A7E1ACF8693008D60C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195C1A7C1ACF8693008D60C3 /* LaunchScreen.xib */; };
 		195C1A8A1ACF8693008D60C3 /* calagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C1A891ACF8693008D60C3 /* calagramTests.swift */; };
 		195C1A941ACF8746008D60C3 /* JCHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C1A931ACF8746008D60C3 /* JCHomeViewController.swift */; };
 		1967AAE31AF99F1400275F2F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1967AAE21AF99F1400275F2F /* FacebookSDK.framework */; };
+		1988DF861B0296A900249AC9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1988DF851B0296A900249AC9 /* Media.xcassets */; };
 		19ED7DD21AF8476F006D7C18 /* back@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19ED7DA31AF8476F006D7C18 /* back@1x.png */; };
 		19ED7DD31AF8476F006D7C18 /* calendar@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19ED7DA41AF8476F006D7C18 /* calendar@1x.png */; };
 		19ED7DD41AF8476F006D7C18 /* camera@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19ED7DA51AF8476F006D7C18 /* camera@1x.png */; };
@@ -162,7 +162,6 @@
 		195C1A721ACF8693008D60C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		195C1A731ACF8693008D60C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		195C1A781ACF8693008D60C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		195C1A7A1ACF8693008D60C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		195C1A7D1ACF8693008D60C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		195C1A831ACF8693008D60C3 /* calagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		195C1A881ACF8693008D60C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = calagramTests/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -170,6 +169,7 @@
 		195C1A931ACF8746008D60C3 /* JCHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCHomeViewController.swift; sourceTree = "<group>"; };
 		1967AAE21AF99F1400275F2F /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		1967AAE41AF99F2700275F2F /* calagram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "calagram-Bridging-Header.h"; sourceTree = "<group>"; };
+		1988DF851B0296A900249AC9 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		19ED7DA31AF8476F006D7C18 /* back@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@1x.png"; sourceTree = "<group>"; };
 		19ED7DA41AF8476F006D7C18 /* calendar@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@1x.png"; sourceTree = "<group>"; };
 		19ED7DA51AF8476F006D7C18 /* camera@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@1x.png"; sourceTree = "<group>"; };
@@ -352,7 +352,7 @@
 				19ED7E031AF86198006D7C18 /* JCCalagramViewController.swift */,
 				19ED7E051AF86289006D7C18 /* JCBusinessProfileViewController.swift */,
 				195C1A771ACF8693008D60C3 /* Main.storyboard */,
-				195C1A7A1ACF8693008D60C3 /* Images.xcassets */,
+				1988DF851B0296A900249AC9 /* Media.xcassets */,
 				195C1A7C1ACF8693008D60C3 /* LaunchScreen.xib */,
 				195C1A711ACF8693008D60C3 /* Supporting Files */,
 				1967AAE41AF99F2700275F2F /* calagram-Bridging-Header.h */,
@@ -604,6 +604,7 @@
 				19ED7DEE1AF8476F006D7C18 /* user_male_circle_filled@2x.png in Resources */,
 				19ED7DD91AF8476F006D7C18 /* home@1x.png in Resources */,
 				19192E641ACFAA5D004065E7 /* play@1x.png in Resources */,
+				1988DF861B0296A900249AC9 /* Media.xcassets in Resources */,
 				19192E661ACFAA5D004065E7 /* play@3x.png in Resources */,
 				19ED7DEA1AF8476F006D7C18 /* location@2x.png in Resources */,
 				19ED7DF31AF8476F006D7C18 /* chat@3x.png in Resources */,
@@ -618,7 +619,6 @@
 				19ED7DF61AF8476F006D7C18 /* copyright@3x.png in Resources */,
 				19ED7DFA1AF8476F006D7C18 /* location_filled@3x.png in Resources */,
 				19ED7DE51AF8476F006D7C18 /* chat_filled@2x.png in Resources */,
-				195C1A7B1ACF8693008D60C3 /* Images.xcassets in Resources */,
 				19ED7DD81AF8476F006D7C18 /* copyright@1x.png in Resources */,
 				19192E2C1ACFA459004065E7 /* status-green@3x.png in Resources */,
 				19ED7DEC1AF8476F006D7C18 /* user_male@2x.png in Resources */,
