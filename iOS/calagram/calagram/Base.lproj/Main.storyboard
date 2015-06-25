@@ -17,8 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MyZ-uj-3xC">
-                                <rect key="frame" x="21" y="347" width="38" height="30"/>
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MyZ-uj-3xC">
+                                <rect key="frame" x="141" y="350" width="38" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="Woq-qs-nww"/>
+                                    <constraint firstAttribute="height" constant="30" id="nVN-mH-zFT"/>
+                                </constraints>
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -26,21 +30,45 @@
                                     <action selector="LoginButtonTouched:" destination="I0i-LM-oBp" eventType="touchUpInside" id="0ch-o3-jes"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXx-Qu-Ycd" customClass="FBLoginView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nXx-Qu-Ycd" customClass="FBLoginView">
                                 <rect key="frame" x="41" y="503" width="239" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="HDc-1z-lpK"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome To Calagram Beta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkr-6A-hR8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Calagram Beta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkr-6A-hR8">
                                 <rect key="frame" x="41" y="72" width="239" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="Rhf-rS-Ul8"/>
+                                    <constraint firstAttribute="width" constant="239" id="tv2-Hu-eNj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GuX-DO-epd">
-                                <rect key="frame" x="16" y="385" width="171" height="51"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GuX-DO-epd">
+                                <rect key="frame" x="31" y="402" width="259" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="4yV-RP-WKy"/>
+                                    <constraint firstAttribute="width" constant="259" id="q6e-XA-BjD"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="GuX-DO-epd" secondAttribute="trailing" constant="14" id="5On-yA-2CZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nXx-Qu-Ycd" secondAttribute="trailing" constant="24" id="9kl-dD-aQV"/>
+                            <constraint firstAttribute="centerY" secondItem="nXx-Qu-Ycd" secondAttribute="centerY" constant="-241.5" id="Ajp-5K-3Ke"/>
+                            <constraint firstItem="nXx-Qu-Ycd" firstAttribute="leading" secondItem="l1d-Wg-KIR" secondAttribute="leadingMargin" constant="25" id="Lif-4T-VWY"/>
+                            <constraint firstAttribute="centerY" secondItem="gkr-6A-hR8" secondAttribute="centerY" constant="173" id="Wsk-32-YBO"/>
+                            <constraint firstAttribute="centerX" secondItem="gkr-6A-hR8" secondAttribute="centerX" id="YHw-r7-Agv"/>
+                            <constraint firstItem="GuX-DO-epd" firstAttribute="leading" secondItem="l1d-Wg-KIR" secondAttribute="leadingMargin" constant="15" id="YbL-4L-enj"/>
+                            <constraint firstAttribute="centerX" secondItem="MyZ-uj-3xC" secondAttribute="centerX" id="dQg-hV-08x"/>
+                            <constraint firstAttribute="centerX" secondItem="nXx-Qu-Ycd" secondAttribute="centerX" id="jGy-41-aC1"/>
+                            <constraint firstAttribute="centerY" secondItem="GuX-DO-epd" secondAttribute="centerY" constant="-143.5" id="nt7-2l-hPd"/>
+                            <constraint firstAttribute="centerY" secondItem="MyZ-uj-3xC" secondAttribute="centerY" constant="-81" id="sN2-Ae-xvR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="BzT-hB-UCU"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
