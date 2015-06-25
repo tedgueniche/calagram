@@ -53,8 +53,8 @@
 		195C1A7E1ACF8693008D60C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195C1A7C1ACF8693008D60C3 /* LaunchScreen.xib */; };
 		195C1A8A1ACF8693008D60C3 /* calagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C1A891ACF8693008D60C3 /* calagramTests.swift */; };
 		195C1A941ACF8746008D60C3 /* JCHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C1A931ACF8746008D60C3 /* JCHomeViewController.swift */; };
-		1967AAE31AF99F1400275F2F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1967AAE21AF99F1400275F2F /* FacebookSDK.framework */; };
 		1988DF861B0296A900249AC9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1988DF851B0296A900249AC9 /* Media.xcassets */; };
+		1990B5901B3C900300543825 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1990B58F1B3C900300543825 /* FacebookSDK.framework */; };
 		19ED7DD21AF8476F006D7C18 /* back@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19ED7DA31AF8476F006D7C18 /* back@1x.png */; };
 		19ED7DD31AF8476F006D7C18 /* calendar@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19ED7DA41AF8476F006D7C18 /* calendar@1x.png */; };
 		19ED7DD41AF8476F006D7C18 /* camera@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19ED7DA51AF8476F006D7C18 /* camera@1x.png */; };
@@ -167,9 +167,9 @@
 		195C1A881ACF8693008D60C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = calagramTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		195C1A891ACF8693008D60C3 /* calagramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calagramTests.swift; sourceTree = "<group>"; };
 		195C1A931ACF8746008D60C3 /* JCHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCHomeViewController.swift; sourceTree = "<group>"; };
-		1967AAE21AF99F1400275F2F /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		1967AAE41AF99F2700275F2F /* calagram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "calagram-Bridging-Header.h"; sourceTree = "<group>"; };
 		1988DF851B0296A900249AC9 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		1990B58F1B3C900300543825 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		19ED7DA31AF8476F006D7C18 /* back@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@1x.png"; sourceTree = "<group>"; };
 		19ED7DA41AF8476F006D7C18 /* calendar@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@1x.png"; sourceTree = "<group>"; };
 		19ED7DA51AF8476F006D7C18 /* camera@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@1x.png"; sourceTree = "<group>"; };
@@ -234,12 +234,12 @@
 				194AE72F1AF6E3CA0015276D /* StoreKit.framework in Frameworks */,
 				194AE72D1AF6E3C40015276D /* Security.framework in Frameworks */,
 				194AE72B1AF6E3BE0015276D /* QuartzCore.framework in Frameworks */,
+				1990B5901B3C900300543825 /* FacebookSDK.framework in Frameworks */,
 				194AE7291AF6E3B80015276D /* MobileCoreServices.framework in Frameworks */,
 				194AE7271AF6E3B10015276D /* CoreLocation.framework in Frameworks */,
 				194AE7251AF6E3AC0015276D /* CoreGraphics.framework in Frameworks */,
 				194AE7231AF6E3A60015276D /* CFNetwork.framework in Frameworks */,
 				194AE7211AF6E1D30015276D /* AudioToolbox.framework in Frameworks */,
-				1967AAE31AF99F1400275F2F /* FacebookSDK.framework in Frameworks */,
 				194AE71F1AF6E16C0015276D /* Parse.framework in Frameworks */,
 				194AE71E1AF6E16C0015276D /* Bolts.framework in Frameworks */,
 			);
@@ -302,7 +302,7 @@
 		194AE71B1AF6E1580015276D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1967AAE21AF99F1400275F2F /* FacebookSDK.framework */,
+				1990B58F1B3C900300543825 /* FacebookSDK.framework */,
 				194AE7381AF6E3ED0015276D /* Social.framework */,
 				194AE7361AF6E3E70015276D /* Accounts.framework */,
 				194AE7341AF6E3DE0015276D /* libsqlite3.dylib */,
